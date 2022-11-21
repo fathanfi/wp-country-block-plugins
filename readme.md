@@ -1,8 +1,4 @@
-# Welcome to the XWP Coding Challenge
-
-We are really happy that you decided to apply to XWP! As part of the hiring process, this challenge helps us to evaluate your technical skills and work experience.
-
-Take note that this code challenge has two parts: a Gutenberg challenge and a Backend challenge. **Please make sure that you only attempt the challenge(s) as directed in the email that you received from XWP.**
+# This is part of XWP Coding Challenge
 
 ## Country Card Block
 
@@ -122,40 +118,44 @@ Here is some additional information that may be helpful:
 - It is okay for the related posts in the card footer to be static when viewed on the frontend. In this version of the block, we are not looking into making the list of posts dynamic.
 - You are free to install additional dependencies, if needed.
 
-## Backend Code Challenge
+Some of enhancement
 
-This challenge tests your knowledge of security and performance in WordPress sites.
+These changes include:
 
-For this challenge, we want you to look primarily at the functions mentioned below, fix whatever problems you see, and make improvements to solve scaling, security, performance, and coding standards issues. There's no need to add any additional features at this stage.
+**Standardize code (eslint, stylint, php)**
+- Fix lint error - [08e2a3f](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/08e2a3f6c680c79d6341834203edc74a34d4716f)
+- Add JSdoc, translator's comment - [2f8c846](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/2f8c84668132c067e1dbe9259855263941cb1554)
 
-### Custom WP-CLI script
+**Bug Fix**
+- Block behavior that can not be edited - [91f0da0](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/91f0da0885c1ab0c1d31e8f456fae0d0f2e9a1c5)
+- Related post's Excerpt that show paragraph <p tag (not sanitized) - [1140c07](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/1140c07a03553cd8cc097c4fddb54d078846dad7)
+- Block validation error due to inconsistency HTML markup - [f81715f](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/f81715f01042b2a20b1838a59904c90b197fc427)
 
-Location: `\XWP\CountryCard\Modules\CLI::handle_cli_request`
+**Internationalisation**
+- Add domain and use _n for singular-plural string - [6f84ca7](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/6f84ca7d8a795b40884649b54e6a1d9bbeb528fd)
 
-The CLI script is responsible for inserting posts with test data. Each post corresponds with one of the world's largest cities with a population larger than 100,000 or 1,000,000. Each posts' content consists of two paragraphs.
+**Code Refactoring**
+- Create separate components folder for some content - [dd234a](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/dd234af55a2088b2321ac8241c7befafc2742835)
+- Dropdown country moved to utility function's components - [28ca1dd](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/a28ca1dd6d5129162a010a81f350949979aea378)
+- Add semantic HTML markup for consistency - [a543400](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/a543400bff2e17e85841442bfe5ae8f419a1b5df)
+- Retieving postID with useSelect - [307ecb4](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/307ecb41debdce8a4e1d503c485f5eaba3e44f9c)
 
-The issue with this script is that it inserts paragraphs that are then treated as "classic blocks" in the Block Editor, causing a poor editorial experience. This script should be modified in a way that it inserts two paragraph blocks instead.
+**Improvement with new Library**
+- Using apiFetch library to fetch data - [5ebbe6](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/5ebbe6891ae2842fc1e7788d2cc44caeabe708b0)
+- Using wordpress/notices to show notice information (error/warning/etc.) - [b067696](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/b067696826bce64db66ec54eaebad878fc111378)
+- Using dompurify library to sanitized data - [1140c07](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/1140c07a03553cd8cc097c4fddb54d078846dad7)
 
-|Status|Screenshot|
-|-|-|
-|Expected|![Paragraph blocks](assets/paragraph-blocks.png?raw=true)|
-|Incorrect|![Paragraph blocks](assets/classic-block.png?raw=true)|
+**Checklist:**
 
+- [x] No lint error or warning when perform npm run lint
+- [x] No PHP error showed in log
+- [x] No Js error showed in browser's console log
+- [x] Page work great on different kind of devices (mobile/tablet/pc)
+- [x] Has add reviewers
+- [x] Has create screenshots / POC for this PR
+- [x] Has been tested on local environment ex. http://localhost:8888/
+- [x] There's no merge conflict when perform the PR
 
-### Block output filtering
+**Country Block Card - Screenshots Video**
 
-The block output is filtered through PHP to append an additional paragraph. The appended paragraph displays a counter of all cities in a chosen country having a population larger than 100,000 or 1,000,000. There are a couple of issues related to this:
-
-#### Cities counter
-
-Location: `\XWP\CountryCard\Modules\Block::count_country_cities`
-
-Data querying used inside this method is non performant and should be improved.
-
-#### Country data extraction
-
-Location: `\XWP\CountryCard\Modules\Block::find_country_data`
-
-Since the `countryCode` attribute is stored inside an HTML `<abbr>` tag, its value needs to be extracted from the block output. The `countryName` value is stored as a `title` attribute of the mentioned tag.
-
-This function uses a combination of string manipulation functions to substract these values, but this should be replaced with a more solid solution.
+https://user-images.githubusercontent.com/1131668/201037253-d7448334-3620-4b3f-a10f-04ee8df11502.mov
