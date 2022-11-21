@@ -1,9 +1,9 @@
 {
-	"name": "@xwp/country-card-block",
+	"name": "@wp/country-card-block",
 	"version": "1.0.0",
 	"private": true,
 	"description": "Block rendering a card with country information.",
-	"author": "XWP",
+	"author": "Fathan Fisabililah",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"engines": {
@@ -12,7 +12,7 @@
 	},
 	"scripts": {
 		"build": "wp-scripts build",
-		"cli:insert-posts": "wp-env run cli wp xwp-country-card insert-posts",
+		"cli:insert-posts": "wp-env run cli wp wp-country-card insert-posts",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",

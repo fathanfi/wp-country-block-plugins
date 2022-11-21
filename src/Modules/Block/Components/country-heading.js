@@ -22,11 +22,11 @@ import continents from '../../../../assets/continents.json';
  */
 export default function CountryHeading( { countryCode } ) {
 	return (
-		<h2 className="xwp-country-card__heading">
-			{ __( 'Hello from', 'xwp-country-card' ) }{ ' ' }
+		<h2 className="wp-country-card__heading">
+			{ __( 'Hello from', 'wp-country-card' ) }{ ' ' }
 			<strong>{ countries[ countryCode ] }</strong> (
 			<span
-				className="xwp-country-card__country-code"
+				className="wp-country-card__country-code"
 				data-country-name={ countries[ countryCode ] }
 			>
 				{ countryCode }

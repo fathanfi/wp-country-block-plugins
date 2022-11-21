@@ -5,7 +5,7 @@
  * @package CountryCard
  */
 
-namespace XWP\CountryCard\Interfaces;
+namespace WP\CountryCard\Interfaces;
 
 /**
  * Module interface

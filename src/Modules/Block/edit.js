@@ -84,7 +84,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						// Translators: %s: Error message
 						__(
 							'Something went wrong when retrieving related post(s): %s',
-							'xwp-country-card'
+							'wp-country-card'
 						),
 						err.message
 					),
@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				<BlockControls>
 					<ToolbarGroup>
 						<ToolbarButton
-							label={ __( 'Change Country', 'xwp-country-card' ) }
+							label={ __( 'Change Country', 'wp-country-card' ) }
 							icon={ edit }
 							onClick={ handleChangeCountry }
 							disabled={ ! Boolean( countryCode ) }
@@ -120,15 +120,15 @@ export default function Edit( { attributes, setAttributes } ) {
 				) : (
 					<Placeholder
 						icon={ globe }
-						label={ __( 'XWP Country Card', 'xwp-country-card' ) }
+						label={ __( 'WP Country Card', 'wp-country-card' ) }
 						isColumnLayout={ true }
 						instructions={ __(
 							'Type in a name of a country you want to display on you site.',
-							'xwp-country-card'
+							'wp-country-card'
 						) }
 					>
 						<ComboboxControl
-							label={ __( 'Country', 'xwp-country-card' ) }
+							label={ __( 'Country', 'wp-country-card' ) }
 							hideLabelFromVision
 							options={ getCountryDropdowns() }
 							value={ countryCode }

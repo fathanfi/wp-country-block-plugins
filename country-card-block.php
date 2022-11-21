@@ -7,12 +7,12 @@
  * Version:           1.0.0
  * Author:            Fathan Fisabilillah
  * Author URI:        https://github.com/fathanfi
- * Text Domain:       xwp-country-card
+ * Text Domain:       wp-country-card
  *
  * @package           CountryCard
  */
 
-namespace XWP\CountryCard;
+namespace WP\CountryCard;
 
 const MAIN_FILE = __FILE__;
 const MAIN_DIR  = __DIR__;

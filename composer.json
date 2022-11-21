@@ -1,5 +1,5 @@
 {
-	"name": "xwp/country-card-block",
+	"name": "wp/country-card-block",
 	"description": "Block rendering a card with country information.",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0-or-later",
@@ -21,7 +21,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"XWP\\CountryCard\\": "src"
+			"WP\\CountryCard\\": "src"
 		}
 	},
 	"scripts": {

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<ruleset name="Sniffs for XWP Country Card Block WordPress plugin">
-	<description>Sniffs for XWP Country Card Block WordPress plugin</description>
+<ruleset name="Sniffs for WP Country Card Block WordPress plugin">
+	<description>Sniffs for WP Country Card Block WordPress plugin</description>
 	<arg value="ps"/>
 	<arg name="extensions" value="php"/>
 	<config name="testVersion" value="8.0-"/>
-	<config name="text_domain" value="xwp-country-card"/>
+	<config name="text_domain" value="wp-country-card"/>
 	<config name="minimum_supported_wp_version" value="6.0"/>
 	<rule ref="PHPCompatibility"/>
 	<rule ref="WordPress-Core">

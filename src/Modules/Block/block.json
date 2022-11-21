@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "xwp/country-card",
+	"name": "wp/country-card",
 	"version": "1.0.0",
 	"title": "Country Card",
 	"category": "widgets",
@@ -14,7 +14,7 @@
 		"countryCode": {
 			"type": "string",
 			"source": "html",
-			"selector": ".xwp-country-card__country-code"
+			"selector": ".wp-country-card__country-code"
 		},
 		"relatedPosts": {
 			"type": "array",
@@ -46,7 +46,7 @@
 			}
 		}
 	},
-	"textdomain": "xwp-country-card",
+	"textdomain": "wp-country-card",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

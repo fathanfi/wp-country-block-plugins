@@ -5,10 +5,10 @@
  * @package CountryCard
  */
 
-namespace XWP\CountryCard\Modules;
+namespace WP\CountryCard\Modules;
 
-use \XWP\CountryCard\Interfaces\Module;
-use const \XWP\CountryCard\MAIN_DIR;
+use \WP\CountryCard\Interfaces\Module;
+use const \WP\CountryCard\MAIN_DIR;
 
 /**
  * CLI module
@@ -21,7 +21,7 @@ final class CLI implements Module {
 	 */
 	public static function register(): void {
 		if ( class_exists( '\WP_CLI' ) ) {
-			\WP_CLI::add_command( 'xwp-country-card insert-posts', [ get_class(), 'handle_cli_request' ] );
+			\WP_CLI::add_command( 'wp-country-card insert-posts', [ get_class(), 'handle_cli_request' ] );
 		}
 	}
 
@@ -31,7 +31,7 @@ final class CLI implements Module {
 	 * ## EXAMPLES
 	 *
 	 *     # Insert posts.
-	 *     $ wp xwp-country-card insert-posts
+	 *     $ wp wp-country-card insert-posts
 	 *
 	 * @throws \Exception Exception thrown if getting cities data fails.
 	 *
@@ -46,10 +46,10 @@ final class CLI implements Module {
 			return;
 		}
 
-		$category_id = get_cat_ID( __( 'Cities', 'xwp-country-card' ) );
+		$category_id = get_cat_ID( __( 'Cities', 'wp-country-card' ) );
 
 		if ( 0 === $category_id ) {
-			$category_id = wp_insert_category( [ 'cat_name' => __( 'Cities', 'xwp-country-card' ) ], true );
+			$category_id = wp_insert_category( [ 'cat_name' => __( 'Cities', 'wp-country-card' ) ], true );
 
 			if ( is_wp_error( $category_id ) ) {
 				\WP_CLI::error(
@@ -85,13 +85,13 @@ final class CLI implements Module {
 				$content = [
 					'population'   => sprintf(
 						// Translators: %1$s city name, %2$s city population.
-						__( 'Population of %1$s: %2$s', 'xwp-country-card' ),
+						__( 'Population of %1$s: %2$s', 'wp-country-card' ),
 						$city['name'],
-						isset( $city['population'] ) ? (string) $city['population'] : __( 'unknown', 'xwp-country-card' ),
+						isset( $city['population'] ) ? (string) $city['population'] : __( 'unknown', 'wp-country-card' ),
 					),
 					'other_cities' => sprintf(
 						// Translators: %s country name.
-						__( 'See <a href="/tag/%s">other cities in this country</a>.', 'xwp-country-card' ),
+						__( 'See <a href="/tag/%s">other cities in this country</a>.', 'wp-country-card' ),
 						sanitize_title( $country['countryName'] ), // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 					),
 				];

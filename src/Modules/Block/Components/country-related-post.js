@@ -19,8 +19,8 @@ export default function CountryRelatedPosts( props ) {
 	const purify = DOMPurify( window );
 
 	return (
-		<div className="xwp-country-card__related-posts">
-			<h3 className="xwp-country-card__related-posts__heading">
+		<div className="wp-country-card__related-posts">
+			<h3 className="wp-country-card__related-posts__heading">
 				{ hasRelatedPosts
 					? sprintf(
 						// translators: %d: number of related posts.
@@ -31,10 +31,10 @@ export default function CountryRelatedPosts( props ) {
 						),
 						relatedPosts.length
 					)
-					: __( 'There are no related posts.', 'xwp-country-card' ) }
+					: __( 'There are no related posts.', 'wp-country-card' ) }
 			</h3>
 			{ hasRelatedPosts && (
-				<ul className="xwp-country-card__related-posts-list">
+				<ul className="wp-country-card__related-posts-list">
 					{ relatedPosts.map( ( relatedPost, index ) => (
 						<li key={ index } className="related-post">
 							<a

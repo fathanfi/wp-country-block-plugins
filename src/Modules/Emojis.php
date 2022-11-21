@@ -5,9 +5,9 @@
  * @package CountryCard
  */
 
-namespace XWP\CountryCard\Modules;
+namespace WP\CountryCard\Modules;
 
-use \XWP\CountryCard\Interfaces\Module;
+use \WP\CountryCard\Interfaces\Module;
 
 /**
  * Emojis module

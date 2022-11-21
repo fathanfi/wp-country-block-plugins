@@ -5,10 +5,10 @@
  * @package CountryCard
  */
 
-namespace XWP\CountryCard\Modules\Block;
+namespace WP\CountryCard\Modules\Block;
 
-use \XWP\CountryCard\Interfaces\Module;
-use const \XWP\CountryCard\MAIN_DIR;
+use \WP\CountryCard\Interfaces\Module;
+use const \WP\CountryCard\MAIN_DIR;
 
 /**
  * Block module
@@ -123,7 +123,7 @@ final class Block implements Module {
 	 * @return string Updated block content.
 	 */
 	public static function display_cities_summary( string $block_content, array $block ): string {
-		if ( 'xwp/country-card' !== $block['blockName'] ) {
+		if ( 'wp/country-card' !== $block['blockName'] ) {
 			return $block_content;
 		}
 
@@ -140,7 +140,7 @@ final class Block implements Module {
 				// Translators: %1$d Cities count, %2$s Country name.
 				__(
 					'There are %1$d cities in %2$s with a population over 100k',
-					'xwp-country-card',
+					'wp-country-card',
 				),
 				$stats['total'],
 				$country['countryName'],
@@ -149,7 +149,7 @@ final class Block implements Module {
 				// Translators: %d Cities count.
 				__(
 					'%d cities with population over 1m',
-					'xwp-country-card',
+					'wp-country-card',
 				),
 				$stats['large'],
 			),

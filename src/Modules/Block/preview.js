@@ -19,7 +19,7 @@ export default function Preview( { countryCode, relatedPosts } ) {
 	}
 
 	return (
-		<article className="xwp-country-card">
+		<article className="wp-country-card">
 			<CountryFlag countryCode={ countryCode } />
 			<CountryHeading countryCode={ countryCode } />
 			<CountryRelatedPosts relatedPosts={ relatedPosts } />

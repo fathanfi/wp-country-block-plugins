@@ -14,7 +14,7 @@ import save from './save';
  */
 import './style.scss';
 
-registerBlockType( 'xwp/country-card', {
+registerBlockType( 'wp/country-card', {
 	edit,
 	save,
 } );
