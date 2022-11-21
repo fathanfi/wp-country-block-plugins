@@ -118,9 +118,11 @@ Here is some additional information that may be helpful:
 - It is okay for the related posts in the card footer to be static when viewed on the frontend. In this version of the block, we are not looking into making the list of posts dynamic.
 - You are free to install additional dependencies, if needed.
 
-Some of enhancement
 
-These changes include:
+
+# The Solutions by Fathan Fisabililah
+
+## These changes include:
 
 **Standardize code (eslint, stylint, php)**
 - Fix lint error - [08e2a3f](https://github.com/xwp-hiring/code-challenge--FathanFisabililah/commit/08e2a3f6c680c79d6341834203edc74a34d4716f)
